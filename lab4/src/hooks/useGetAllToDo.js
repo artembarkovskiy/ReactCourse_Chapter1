@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import useLoading from "./useLoading";
 
 
 const useGetAllToDo = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const {isLoading, setIsLoading} = useLoading()
+  
   const [data, setData] = useState([]);
   
 
