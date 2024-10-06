@@ -3,8 +3,14 @@ import { useState } from "react";
 function TaskItem({ task, onDeleteTask, onEditTask }) {
   const [isEditMode, setIsEditMode] = useState(false);
   const [title, setTitle] = useState(task.title);
+
   function handleEdit() {
     setIsEditMode(true);
+
+    if (title.trim() === "") {
+      alert("Поле пусте або введене невірно");
+      return;
+    }
 
     if (isEditMode) {
       const toDo = {
@@ -16,6 +22,7 @@ function TaskItem({ task, onDeleteTask, onEditTask }) {
       setIsEditMode(false);
     }
   }
+
   function handleChange(event) {
     setTitle(event.target.value);
   }
@@ -41,4 +48,5 @@ function TaskItem({ task, onDeleteTask, onEditTask }) {
     </li>
   );
 }
+
 export default TaskItem;
