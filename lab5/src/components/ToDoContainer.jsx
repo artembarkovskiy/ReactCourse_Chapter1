@@ -24,6 +24,7 @@ function ToDoContainer() {
   return (
     <>
       <TaskSearch searchTitle={searchTitle} setSearchTitle={setSearchTitle} />
+
       <TaskForm onAddTask={handleAddTask} />
 
       <Loading loading={isLoading}>

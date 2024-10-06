@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 function TaskForm({ onAddTask }) {
-  const [title, setTitle] = useState('');
-  const [error, setError] = useState('');
+  const [title, setTitle] = useState("");
+  const [error, setError] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (title.trim() === '') {
-      setError('Поле пусте або введене невірно');
+    if (title.trim() === "") {
+      setError("Поле пусте або введене невірно");
       return;
     }
 
@@ -18,8 +18,8 @@ function TaskForm({ onAddTask }) {
 
     console.log(task);
     onAddTask(task);
-    setTitle('');
-    setError('');
+    setTitle("");
+    setError("");
   }
 
   function handleChange(event) {
@@ -36,7 +36,7 @@ function TaskForm({ onAddTask }) {
       />
 
       <button type="submit">Додати</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </form>
   );
 }

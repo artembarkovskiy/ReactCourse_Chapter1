@@ -1,11 +1,9 @@
-import PageTitle from './components/PageTitle';
-import ToDoContainer from './components/ToDoContainer';
+import PageTitle from "./components/PageTitle";
+import ToDoContainer from "./components/ToDoContainer";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-  
-
   return (
     <>
       <PageTitle />
@@ -14,4 +12,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
