@@ -1,35 +1,47 @@
 .user-card {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #f1f1f1;
-    border-radius: 4px;
+    padding: 15px;
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .user-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   }
   
   .user-avatar {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border: 2px solid #444;
   }
   
   .user-name {
-    flex-grow: 1;
-    font-size: 16px;
+    flex: 1;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
   }
   
   .delete-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .delete-button:hover {
-    background-color: #b02a37;
+    background-color: #444;
+    transform: scale(1.1);
   }
   
