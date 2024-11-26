@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const {
-    filteredUsers,
+    filtered,
     filter,
     loadUsers,
     handleDelete,
@@ -23,7 +23,7 @@ function App() {
         onChange={handleFilter}
         className="filter-input"
       />
-      <UserList users={filteredUsers} onDelete={handleDelete} />
+      <UserList users={filtered} onDelete={handleDelete} />
     </div>
   );
 }

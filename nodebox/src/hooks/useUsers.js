@@ -12,14 +12,14 @@ const deleteUser = async (id) => {
 
 export const useUsers = () => {
   const [users, setUsers] = useState([]);
-  const [filteredUsers, setFilteredUsers] = useState([]);
+  //const [filteredUsers, setFilteredUsers] = useState([]);
   const [filter, setFilter] = useState("");
 
   const loadUsers = async () => {
     try {
       const usersData = await getUsers();
       setUsers(usersData);
-      setFilteredUsers(usersData);
+      //setFilteredUsers(usersData);
     } catch (error) {
       console.error("Помилка завантаження користувачів:", error);
     }
@@ -30,7 +30,7 @@ export const useUsers = () => {
       await deleteUser(id);
       const updatedUsers = users.filter((user) => user.id !== id);
       setUsers(updatedUsers);
-      setFilteredUsers(updatedUsers);
+      //setFilteredUsers(updatedUsers);
     } catch (error) {
       console.error("Помилка видалення користувача:", error);
     }
@@ -39,15 +39,15 @@ export const useUsers = () => {
   const handleFilter = (event) => {
     const value = event.target.value.toLowerCase();
     setFilter(value);
-    const filtered = users.filter((user) =>
-      `${user.first_name} ${user.last_name}`.toLowerCase().includes(value)
-    );
-    setFilteredUsers(filtered);
+    //setFilteredUsers(filtered);
   };
+  const filtered = users.filter((user) =>
+    `${user.first_name} ${user.last_name}`.toLowerCase().includes(filter)
+  );
 
   return {
     users,
-    filteredUsers,
+    filtered,
     filter,
     setFilter,
     loadUsers,
